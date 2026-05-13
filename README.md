@@ -1,151 +1,153 @@
-<h1 align="center">CPU Scheduling Simulator</h1>
+# CPU Scheduling Simulator
 
-<p align="center">
-  <b>Operating Systems Project | CPU Scheduling Algorithms Simulation and Performance Analysis</b>
-</p>
+## Operating Systems Project
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python">
-  <img src="https://img.shields.io/badge/Matplotlib-Visualization-orange?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/OS-CPU%20Scheduling-purple?style=for-the-badge">
-</p>
+A complete CPU Scheduling Simulator developed using Python to simulate and compare different CPU scheduling algorithms used in operating systems.
 
 ---
 
-## Project Overview
+# Project Overview
 
-This project is a complete **CPU Scheduling Simulator** developed using Python.  
-It simulates and compares different CPU scheduling algorithms used in operating systems.
+This project demonstrates how operating systems manage CPU allocation between processes using different scheduling algorithms.
 
-The simulator calculates important performance metrics, generates professional Gantt charts, compares algorithm performance, and exports results for analysis.
+The simulator calculates important performance metrics and compares algorithm efficiency under multiple workload scenarios.
 
----
+Implemented scheduling algorithms:
 
-## Implemented Algorithms
-
-- First Come First Serve **FCFS**
-- Shortest Job First **SJF**
-- Round Robin **RR**
+- First Come First Serve (FCFS)
+- Shortest Job First (SJF)
+- Round Robin (RR)
 - Priority Scheduling
 
 ---
 
-## Features
+# Features
 
-- Multiple workload scenarios
-- Arrival Time and Burst Time support
-- Priority support
-- Time Quantum support for Round Robin
+- Multiple scheduling algorithms
 - Waiting Time calculation
 - Turnaround Time calculation
-- Average Waiting Time
-- Average Turnaround Time
-- CPU Utilization
-- Throughput
-- Gantt Chart visualization
-- Performance comparison charts
+- Completion Time calculation
+- CPU Utilization analysis
+- Throughput analysis
+- Gantt Chart generation
+- Performance comparison graphs
+- Multiple workload scenarios
 - CSV result export
+- Process priority support
+- Time Quantum support
 
 ---
 
-## Project Scenarios
+# Implemented Algorithms
 
-| Scenario | Description |
-|---|---|
-| Stress Test | Heavy workload with long and short CPU bursts |
-| Balanced Workload | Moderate workload with balanced process distribution |
-| Starvation Case | Scenario designed to test starvation and fairness issues |
+## 1. First Come First Serve (FCFS)
+
+Processes are executed according to their arrival order in the ready queue.
+
+### Advantages
+- Simple implementation
+- Low overhead
+- Fair based on arrival order
+
+### Disadvantages
+- High waiting time
+- Convoy effect
+- Poor responsiveness
 
 ---
 
-## Performance Metrics
+## 2. Shortest Job First (SJF)
 
-| Metric | Meaning |
+The process with the shortest burst time executes first.
+
+### Advantages
+- Best average waiting time
+- Efficient CPU usage
+- Better throughput
+
+### Disadvantages
+- Possible starvation
+- Requires burst time estimation
+
+---
+
+## 3. Round Robin (RR)
+
+Processes execute using fixed time slices called quantum.
+
+### Advantages
+- High fairness
+- Good responsiveness
+- Suitable for time-sharing systems
+
+### Disadvantages
+- Context switching overhead
+- Performance depends on quantum size
+
+---
+
+## 4. Priority Scheduling
+
+Processes execute according to assigned priority values.
+
+### Advantages
+- Fast execution for important processes
+- Flexible scheduling
+
+### Disadvantages
+- Starvation risk for low-priority processes
+
+---
+
+# Performance Metrics
+
+| Metric | Description |
 |---|---|
 | WT | Waiting Time |
 | TAT | Turnaround Time |
 | CT | Completion Time |
-| CPU Utilization | Percentage of time CPU is busy |
-| Throughput | Number of completed processes per unit time |
+| CPU Utilization | CPU busy percentage |
+| Throughput | Completed processes per unit time |
 
 ---
 
-## Stress Test Results
+# Experimental Scenarios
 
-### FCFS Gantt Chart
+## Stress Test Scenario
+Heavy workload with many processes and large burst times.
 
-<img src="cpu_scheduling_output/Stress_Test_FCFS_gantt.png" width="900">
+## Balanced Workload Scenario
+Balanced process distribution with moderate workload.
 
-### SJF Gantt Chart
-
-<img src="cpu_scheduling_output/Stress_Test_SJF_gantt.png" width="900">
-
-### Round Robin Gantt Chart
-
-<img src="cpu_scheduling_output/Stress_Test_Round_Robin_gantt.png" width="900">
-
-### Priority Scheduling Gantt Chart
-
-<img src="cpu_scheduling_output/Stress_Test_Priority_Scheduling_gantt.png" width="900">
-
-### Stress Test Comparison
-
-<img src="cpu_scheduling_output/Stress_Test_comparison.png" width="900">
+## Starvation Scenario
+Designed to test fairness and starvation behavior.
 
 ---
 
-## Balanced Workload Results
+# Results Summary
 
-### FCFS Gantt Chart
+The results showed major behavioral differences between scheduling algorithms.
 
-<img src="cpu_scheduling_output/Balanced_Workload_FCFS_gantt.png" width="900">
-
-### SJF Gantt Chart
-
-<img src="cpu_scheduling_output/Balanced_Workload_SJF_gantt.png" width="900">
-
-### Round Robin Gantt Chart
-
-<img src="cpu_scheduling_output/Balanced_Workload_Round_Robin_gantt.png" width="900">
-
-### Priority Scheduling Gantt Chart
-
-<img src="cpu_scheduling_output/Balanced_Workload_Priority_Scheduling_gantt.png" width="900">
-
-### Balanced Workload Comparison
-
-<img src="cpu_scheduling_output/Balanced_Workload_comparison.png" width="900">
+- SJF achieved the lowest average waiting and turnaround times.
+- Round Robin provided better fairness and responsiveness.
+- FCFS was simple but suffered from high waiting times.
+- Priority Scheduling performed well for important tasks.
 
 ---
 
-## Starvation Case Results
+# Technologies Used
 
-### FCFS Gantt Chart
-
-<img src="cpu_scheduling_output/Starvation_Case_FCFS_gantt.png" width="900">
-
-### SJF Gantt Chart
-
-<img src="cpu_scheduling_output/Starvation_Case_SJF_gantt.png" width="900">
-
-### Round Robin Gantt Chart
-
-<img src="cpu_scheduling_output/Starvation_Case_Round_Robin_gantt.png" width="900">
-
-### Priority Scheduling Gantt Chart
-
-<img src="cpu_scheduling_output/Starvation_Case_Priority_Scheduling_gantt.png" width="900">
-
-### Starvation Case Comparison
-
-<img src="cpu_scheduling_output/Starvation_Case_comparison.png" width="900">
+- Python 3
+- Pandas
+- Matplotlib
 
 ---
 
-## How to Run
+# How to Run
 
-Install the required libraries:
+Install required libraries:
 
+```bash
+pip install pandas matplotlib
 ```bash
 pip install pandas matplotlib
